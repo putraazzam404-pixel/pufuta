@@ -19,8 +19,8 @@
   <hr>
       <form>
         <h2>pertanyaan, saran dan kritik </h2>
-        Nama kamu : <input type="text">
-        Email kamu : <input type="text">  
+        Nama kamu : <input type="text" name="nama"> <br>
+        Email kamu : <input type="text" name="email">  
         <br> <br>
         <label for="tanya">Pertanyaan, saran dan kritik mu :</label> <br>
         <textarea name="tanya" id="tanya" cols="50px" rows="10px"></textarea> <br> <br>
@@ -30,15 +30,19 @@
      
         <audio src="/audio/click.wav" autoplay ></audio>
 
-             <script>
-        function submitForm() 
-        {
+
+          <script>
+        function submitForm() {
+            // Play audio (bisa dijadikan efek klik)
+            document.getElementById('clickSound').play();
+
             // Bersihkan form (seakan terkirim)
             document.getElementById('nama').value = '';
+            document.getElementById('email').value = '';
             document.getElementById('tanya').value = '';
 
             // Optional: tampilkan alert atau pesan sukses
-            alert('Terima kasih! Pesanmu sudah terkirim!');
+            alert('Terima kasih! Pesanmu sudah terkirim dan akan admin kirim jawabannya ke email kamu (insyaallah) (.');
         }
     </script>
 
