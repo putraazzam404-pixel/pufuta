@@ -1,51 +1,62 @@
 <!DOCTYPE html>
-<!-- cara edit isi : masuk ke body baru ke center.-->
 <html>
-    <head>
-        <title>Saran dan kritik - Pufutara Web</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-     <body>
-     <br>  
+<head>
+    <title>Saran dan kritik - Pufutara Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <br>
 
+    <h1 style="font-size:45px">
+        <img src="img/kucingjempol.jpg" align="center" width="80px" title="Foto kucing kesukaan admin" alt="Kucing jempol">
+        Kuesioner - Pufutara Web
+    </h1>
+    <hr>
 
-     <h1 style=font-size:45px>
-     <img src="img/kucingjempol.jpg" align="center" width="80px" title="Foto kucing kesukaan admin">
-     Kuesioner - Pufutara Web</h1>
-     <hr>
+    <pre style="font-family: times new roman;">
+        <a href="index.html">Beranda ( home )</a>   
+        <a href="perpus.html">Perpustakaan Pufutara</a>   
+        <a href="artikel.html">Artikel</a>   
+        <a href="todolisttanpax.html">Todo list</a>   
+        <a href="kelola akun.html">Kelola akun</a>   
+        <a href="youtube.html">Koleksi video & audio admin</a>   
+        <a href="kontak.html">Kontak kami</a>   
+        <a href="saran.html">Tentang pufutara</a>
+    </pre>
 
-  <pre style="font-family: times new roman;">   <a href="index.html">Beranda ( home )</a>   <a href="perpus.html">Perpustakaan Pufutara</a>   <a href="artikel.html">Artikel</a>   <a href="todolisttanpax.html">Todo list</a>   <a href="kelola akun.html">Kelola akun</a>   <a href="youtube.html">Koleksi video & audio admin</a>   <a href="kontak.html">Kontak kami</a>   <a href="saran.html">Tentang pufutara</a></pre>
-      
-  <hr>
-      <form>
+    <hr>
+
+    <form>
         <h2>pertanyaan, saran dan kritik </h2>
-        Nama kamu : <input type="text" name="nama"> <br>
-        Email kamu : <input type="text" name="email">  
+        Nama kamu : <input type="text" name="nama" id="nama"> <br>
+        Email kamu : <input type="text" name="email" id="email">  
         <br> <br>
         <label for="tanya">Pertanyaan, saran dan kritik mu :</label> <br>
-        <textarea name="tanya" id="tanya" cols="50px" rows="10px"></textarea> <br> <br>
-        <input type="button" name="submit" value="kirim kepada admin" onclick="submitform()">
+        <textarea name="tanya" id="tanya" cols="50" rows="10"></textarea> <br> <br>
+        <input type="button" name="submit" value="kirim kepada admin" onclick="submitForm()">
         <br> <br>
-      </form>
-     
-        <audio src="/audio/click.wav" autoplay ></audio>
+    </form>
 
+    <!-- Tambahkan id pada audio supaya bisa diakses -->
+    <audio id="clickSound" src="/audio/click.wav" autoplay></audio>
 
-          <script>
+    <script>
         function submitForm() {
             // Play audio (bisa dijadikan efek klik)
-            document.getElementById('clickSound').play();
+            const audio = document.getElementById('clickSound');
+            if (audio) {
+                audio.play();
+            }
 
             // Bersihkan form (seakan terkirim)
             document.getElementById('nama').value = '';
             document.getElementById('email').value = '';
             document.getElementById('tanya').value = '';
 
-            // Optional: tampilkan alert atau pesan sukses
-            alert('Terima kasih! Pesanmu sudah terkirim dan akan admin kirim jawabannya ke email kamu (insyaallah) (.');
+            // Pesan sukses
+            alert('Terima kasih! Pesanmu sudah terkirim dan akan admin kirim jawabannya ke email kamu (insyaallah).');
         }
     </script>
 
-
 </body>
-</html>
+</html
